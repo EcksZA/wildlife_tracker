@@ -23,4 +23,9 @@ class SpeciesController < ApplicationController
       render('species/new.html.erb')
     end
   end
+
+  def edit
+    @species = Species.find(params[:id])
+    render('species/edit.html.erb')
+  end
 end
