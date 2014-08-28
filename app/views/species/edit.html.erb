@@ -9,9 +9,9 @@
   </ul>
 <% end %>
 
-<form action='/species' type='hidden' method='post'>
+<form action='/species/<%= @species.id %>' method='post'>
   <input name='_method' type='hidden' value='patch'>
   <label for='species_species'>Species</label>
   <input id='species_species' name='species[species]' type='text' value='<%= @species.species %>'>
-  <button>Add Species</button>
+  <button>Edit Species</button>
 </form>
