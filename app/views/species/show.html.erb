@@ -1,3 +1,8 @@
 <h1><%= @species.species %></h1>
 
 <p><a href="/species">Back to species list</a></p>
+
+<p><a href="/species/<%= @species.id %>"
+  data-confirm="Are you sure you want to delete this species?"
+  data-method="delete"
+  rel="nofollow">Delete</a><p>
