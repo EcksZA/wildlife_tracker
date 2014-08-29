@@ -1,3 +1,3 @@
 class Sighting < ActiveRecord::Base
-  validates :date, :latitude, presence: true
+  validates :date, :latitude, :longitude, presence: true
 end
