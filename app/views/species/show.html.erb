@@ -1,8 +1,16 @@
 <h1><%= @species.species %></h1>
 
-<p><a href="/species">Back to species list</a></p>
+<% @sightings.each do |seen| %>
+  <ul>
+    <li><%= seen.name &nbsp | &nbsp seen.latitude &nbsp | &nbsp seen.longitude</li>
+  </ul>
+<% end %>
 
-<p><a href="/species/<%= @species.id %>"
-  data-confirm="Are you sure you want to delete this species?"
-  data-method="delete"
-  rel="nofollow">Delete</a><p>
+<p><a href='/species'>Back to species list</a></p>
+
+<p><a href='/species/<%= @species.id %>'
+  data-confirm='Are you sure you want to delete this species?'
+  data-method='delete'
+  rel='nofollow'>Delete</a><p>
+
+<p><a href='/species/<%= @species.id %>/new'>Add a sighting</a></p>
