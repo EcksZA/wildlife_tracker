@@ -9,13 +9,13 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
-group :develelopment do
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
 end
 
-group :test, :develelopment do
+group :test, :development do
   gem 'rspec-rails'
 end
 

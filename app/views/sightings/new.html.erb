@@ -6,13 +6,13 @@
   <% end %>
 <% end %>
 
-<form action='/species/:sightings_id' method='post'>
+<form action='/species/<%= @sighting.species.id %>/sightings' method='post'>
   <label for='sighting_date'>Date</label>
-  <input id='sighting_date' name='sighting[date]' type='text'>
-  <label for='sighting_latitude'>Laitude</label>
-  <input id='sighting_latitude' name='sighting[longitude]' type='text'>
+  <input id='sighting_date' name='sighting[date]' type='text' value='<%= @sighting.date %>'>
+  <label for='sighting_latitude'>Latitude</label>
+  <input id='sighting_latitude' name='sighting[latitude]' type='text' value='<%= @sighting.latitude %>'>
   <label for='sighting_longitude'>Longitude</label>
-  <input id='sighting_longitude' name='sighting[longitude]' type='text'>
-  <input name='sighting[sighting_id]' type='hidden' value='<%= @sighting.species_id %>'>
-  <label>Add Sighting</label>
+  <input id='sighting_longitude' name='sighting[longitude]' type='text' value='<%= @sighting.longitude %>'>
+  <input name='sighting[species_id]' type='hidden' value='<%= @sighting.species_id %>'>
+  <button>Add Sighting</button>
 </form>

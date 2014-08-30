@@ -1,8 +1,8 @@
 <h1><%= @species.species %></h1>
 
-<% @sightings.each do |seen| %>
+<% @species.sightings.each do |seen| %>
   <ul>
-    <li><%= seen.name &nbsp | &nbsp seen.latitude &nbsp | &nbsp seen.longitude</li>
+    <li><a href='/species/<%= @species.id %>/sightings/<%= seen.id %>/edit'><%= seen.date %> | <%=seen.latitude %> | <%= seen.longitude %></a></li>
   </ul>
 <% end %>
 
@@ -13,4 +13,4 @@
   data-method='delete'
   rel='nofollow'>Delete</a><p>
 
-<p><a href='/species/<%= @species.id %>/new'>Add a sighting</a></p>
+<p><a href='/species/<%= @species.id %>/sightings/new'>Add a sighting</a></p>
