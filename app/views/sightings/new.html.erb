@@ -16,3 +16,9 @@
   <input name='sighting[species_id]' type='hidden' value='<%= @sighting.species_id %>'>
   <button>Add Sighting</button>
 </form>
+
+<select>
+  <% @region.each do |region| %>
+    <option><%= @region.name %></option>
+  <% end %>
+</select>
