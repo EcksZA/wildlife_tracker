@@ -1,1 +1,7 @@
-index.html.erb
+<h1>Regions</h1>
+
+<ul>
+  <% @region.each do |region| %>
+    <li><a href="/regions/<%= region.id %>"><%= region.name %></a></li>
+  <% end %>
+</ul>
