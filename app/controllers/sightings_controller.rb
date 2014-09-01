@@ -2,11 +2,13 @@ class SightingsController < ApplicationController
   def new
     species = Species.find(params[:species_id])
     @sighting = species.sightings.new
+    @region = Region.all
     render('/sightings/new.html.erb')
   end
 
   def create
     @sighting = Sighting.new(params[:sighting])
+    @region = Region.all
 
     if @sighting.save
       redirect_to("/species/#{@sighting.species_id}")

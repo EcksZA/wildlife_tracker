@@ -6,7 +6,13 @@
   <% end %>
 <% end %>
 
-<form action='/species/<%= @sighting.species.id %>/sightings' method='post'>
+<select name='sighting[region_id]' form='sighting_form'>
+  <% @region.each do |region| %>
+    <option value='<%= region.id %>'><%= region.name %></option>
+  <% end %>
+</select>
+
+<form id='sighting_form' action='/species/<%= @sighting.species.id %>/sightings' method='post'>
   <label for='sighting_date'>Date</label>
   <input id='sighting_date' name='sighting[date]' type='text' value='<%= @sighting.date %>'>
   <label for='sighting_latitude'>Latitude</label>
@@ -16,9 +22,3 @@
   <input name='sighting[species_id]' type='hidden' value='<%= @sighting.species_id %>'>
   <button>Add Sighting</button>
 </form>
-
-<select>
-  <% @sighting.regions.each do |region| %>
-    <option><%= region.name %></option>
-  <% end %>
-</select>
