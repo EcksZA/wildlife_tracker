@@ -18,7 +18,7 @@
 </form>
 
 <select>
-  <% @region.each do |region| %>
-    <option><%= @region.name %></option>
+  <% @sighting.regions.each do |region| %>
+    <option><%= region.name %></option>
   <% end %>
 </select>
