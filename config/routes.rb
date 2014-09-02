@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   match('/species/:species_id/sightings/:id/edit', {:via => :get, :to => 'sightings#edit'})
   match('/species/:species_id/sightings/:id', {:via => [:patch, :put], :to => 'sightings#update'})
   match('/species/:species_id/sightings/:id', {:via => :delete, :to => 'sightings#destroy'})
+  match('/species/:species_id/sightings/report/date', { :via => :get, :to => 'sightings#report_date'})
 
   match('/regions',{:via => :get, :to => 'regions#index'})
   match('/regions', {:via => :post, :to => 'regions#create'})
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   match('/regions/:id/edit', {:via => :get, :to => 'regions#edit'})
   match('/regions/:id', {:via => [:patch, :put], :to => 'regions#update'})
   match('/regions/:id', :via => :delete, :to => 'regions#destroy')
+  match('/regions/:id/sightings/report/region', { :via => :get, :to => 'regions#report_region'})
 end

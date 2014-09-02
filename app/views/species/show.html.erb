@@ -6,6 +6,31 @@
   </ul>
 <% end %>
 
+<h3>Sightings Report By Date:</h3>
+
+<form action='/species/<%= @species.id %>/sightings/report/date' method='get'>
+  <label for='sighting_start_date'>Start date</label>
+  <input id='sighting_start_date' name='start_date' type='text']>
+  <label for='sighting_end_date'>End date</label>
+  <input id='sighting_end_date' name='end_date' type='text'>
+  <button>Run report</button>
+</form>
+
+<h3>Sightings Report By Region</h3>
+
+<p>Please choose region</p>
+
+<select name='region_id' form='region_form'>
+  <option value=''>Please choose an option:</option>
+  <% @region.each do |region| %>
+    <option value='<%= region.id %>'><%= region.name %></option>
+  <% end %>
+</select>
+
+<form id='region_form' action='/species/<%= @species.id %>/sightings/report/region' method='get'>
+  <button>Search Region</button>
+</form>
+
 <p><a href='/species'>Back to species list</a></p>
 
 <p><a href='/species/<%= @species.id %>'

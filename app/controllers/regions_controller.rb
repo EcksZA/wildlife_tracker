@@ -44,4 +44,10 @@ class RegionsController < ApplicationController
     @region.destroy
     redirect_to('/regions')
   end
+
+  def report_region
+    @region = Region.find(params["region_id"])
+    @sighting = Sighting.where("region_id = ?", params[:region_id])
+    render('regions/report_region.html.erb')
+  end
 end

@@ -1,0 +1,10 @@
+<h1>Sightings Report</h1>
+<h3><%= @species.species %></h3>
+
+<%= blah %>
+
+<% @sighting.each do |sighting| %>
+  <ul>
+    <li><%= sighting.date %></li>
+  </ul>
+<% end %>

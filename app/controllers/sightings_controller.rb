@@ -37,4 +37,10 @@ class SightingsController < ApplicationController
     @sighting.destroy
     render('/sightings/destroy.html.erb')
   end
+
+  def report_date
+    @species = Species.find(params[:species_id])
+    @sighting = Sighting.where("date >= ? AND date <= ? AND species_id = ?", params[:start_date], params[:end_date], params[:species_id])
+    render('sightings/report_date.html.erb')
+  end
 end
